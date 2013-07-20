@@ -3,8 +3,7 @@ pypyodbc
 
 A pure Python Cross Platform ODBC interface module
 
-
-**The homepage of pypyodbc is at http://code.google.com/p/pypyodbc/, while here is its development space.**
+**This is a modified version which is compatible with Informix Client SDK 3.50/3.70 for Mac OS X.**
 
 Features
 --------
@@ -33,14 +32,12 @@ http://tech.groups.yahoo.com/group/pypyodbc/messages
 Install
 -------
 
-If you have pip available:
+Install this modified version from GitHub:
+
+    pip install git+https://github.com/rockallite/pypyodbc-informixcsdk.git#egg=pypyodbc-informixcsdk
+
+If you want to install the ORIGINAL version:
 
     pip install pypyodbc
 
 Or get the latest pypyodbc.py script from GitHub (Main Development site) <https://github.com/jiangwen365/pypyodbc>
-
-Double click the setup.py file, or run
-
-    setup.py install
-
-Also check out the Google wiki at http://code.google.com/p/pypyodbc/

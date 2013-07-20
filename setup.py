@@ -9,15 +9,16 @@ except:
 
 
 setup(
-    name='pypyodbc',
-    version='1.0.5',
-    description='A Pure Python ctypes ODBC module',
-    author='jiangwen365',
-    author_email='jiangwen365@gmail.com',
-    url='http://code.google.com/p/pypyodbc/',
+    name='pypyodbc-informixcsdk',
+    version='1.1.5-rkl20130721',
+    description='A Pure Python ctypes ODBC module (with Informix Client SDK for Mac OS X support)',
+    author='Rockallite Wulf',
+    author_email='rockallite.wulf@gmail.com',
+    url='https://github.com/rockallite/pypyodbc-informixcsdk',
     py_modules=['pypyodbc'],
       long_description="""\
-      A Pure Python ctypes ODBC module compatible with PyPy and almost totally same usage as pyodbc
+      A Pure Python ctypes ODBC module compatible with PyPy and almost totally same usage as pyodbc.
+      This version supports Informix Client SDK for Mac OS X.
       """,
       classifiers=[
           "License :: OSI Approved :: MIT License",
