@@ -36,7 +36,7 @@ Install
 
 Install this modified version from GitHub:
 
-    pip install git+https://github.com/rockallite/pypyodbc-informixcsdk.git#egg=pypyodbc-informixcsdk
+    pip install git+https://github.com/rockallite/pypyodbc-informixcsdk.git
 
 Uninstall
 
