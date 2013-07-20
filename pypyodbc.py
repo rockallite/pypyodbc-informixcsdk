@@ -4,6 +4,7 @@
 
 # The MIT License (MIT)
 #
+# Copyright (c) 2013 Rockallite Wulf <rockallite.wulf@gmail.com>
 # Copyright (c) 2013 Henry Zhou <jiangwen365@gmail.com> and PyPyODBC contributors
 # Copyright (c) 2004 Michele Petrazzo
 
@@ -25,7 +26,7 @@ pooling = True
 apilevel = '2.0'
 paramstyle = 'qmark'
 threadsafety = 1
-version = '1.1.5'
+version = '1.1.5-rkl20130721'
 lowercase=True
 
 DEBUG = 0
@@ -1759,7 +1760,7 @@ class Cursor:
                 while 1:
                     ret = SQLGetData(self.stmt_h, col_num, target_type, ADDR_alloc_buffer, total_buf_len, ADDR_used_buf_len)
                     if ret == SQL_SUCCESS:
-                        if used_buf_len.value == SQL_NULL_DATA:
+                        if used_buf_len.value in (SQL_NULL_DATA, 0xffffffff):
                             value_list.append(None)                 
                         else:
                             if blocks == []:
