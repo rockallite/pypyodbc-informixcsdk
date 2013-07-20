@@ -11,17 +11,19 @@ Features
   * One pure Python script, runs on CPython / IronPython / PyPy , Python 3.3 / 2.4 / 2.5 / 2.6 / 2.7 , Win / Linux , 32 / 64 bit
   * Almost totally same usage as pyodbc (can be seen as a re-implementation of pyodbc in pure Python via ctypes)
   * Simple - the whole module is implemented in a single python script with less than 3000 lines
-  * Built-in Access MDB file creation and compression functions on Windows 
+  * Built-in Access MDB file creation and compression functions on Windows
+  * Informix Client SDK for Mac OS X support
 
 Simply try pypyodbc:
 
     import pypyodbc 
-    pypyodbc.win_create_mdb('D:\\database.mdb')
-    connection_string = 'Driver={Microsoft Access Driver (*.mdb)};DBQ=D:\\database.mdb'
-    connection = pypyodbc.connect(connection_string)
-    SQL = 'CREATE TABLE saleout (id COUNTER PRIMARY KEY,product_name VARCHAR(25));'
-    connection.cursor().execute(SQL)
-    ...
+    conn = pypyodbc.connect(driver='iclit09b.dylib', server='your_server', db='your_db',
+                            uid='your_username', pwd='your_password')
+    cursor = conn.cursor()
+    cursor.execute('CREATE TEMP TABLE ttbl1 (num DECIMAL(14, 2))')
+    cursor.execute('INSERT INTO ttbl1 VALUES (NULL)')
+    cursor.execute('SELECT num FROM ttbl1')
+    cursor.fetchone()
 
 BBS
 ---
