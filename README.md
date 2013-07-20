@@ -3,7 +3,7 @@ pypyodbc
 
 A pure Python Cross Platform ODBC interface module
 
-**This is a modified version which is compatible with Informix Client SDK 3.50/3.70 for Mac OS X.**
+**This is a modified version which is compatible with Informix Client SDK 3.50 / 3.70 for Mac OS X.**
 
 Features
 --------
