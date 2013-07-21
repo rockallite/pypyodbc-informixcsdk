@@ -38,6 +38,10 @@ Install this modified version from GitHub:
 
     pip install git+https://github.com/rockallite/pypyodbc-informixcsdk.git
 
+Upgrade to the latest version:
+
+    pip install --upgrade git+https://github.com/rockallite/pypyodbc-informixcsdk.git
+
 Uninstall
 
     pip uninstall pypyodbc-informixcsdk
