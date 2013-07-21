@@ -19,11 +19,12 @@ Simply try pypyodbc:
     import pypyodbc 
     conn = pypyodbc.connect(driver='iclit09b.dylib', server='your_server', db='your_db',
                             uid='your_username', pwd='your_password')
-    cursor = conn.cursor()
+    cursor = conn.cursor(pypyodbc.NamedTupleRow)
     cursor.execute('CREATE TEMP TABLE ttbl1 (num DECIMAL(14, 2))')
     cursor.execute('INSERT INTO ttbl1 VALUES (NULL)')
     cursor.execute('SELECT num FROM ttbl1')
-    cursor.fetchone()
+    row = cursor.fetchone()
+    print row.num
 
 BBS
 ---
