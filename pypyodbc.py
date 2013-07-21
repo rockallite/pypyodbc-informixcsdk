@@ -26,7 +26,7 @@ pooling = True
 apilevel = '2.0'
 paramstyle = 'qmark'
 threadsafety = 1
-version = '1.1.5-rkl20130721-2'
+version = '1.1.5-rkl20130721-3'
 lowercase=True
 
 DEBUG = 0
@@ -1013,7 +1013,7 @@ def NamedTupleRow(cursor):
     """
     from collections import namedtuple
 
-    attr_names = [x[0] for x in cursor._ColBufferList]
+    attr_names = [x[0] for x in cursor.description]
 
     class Row(namedtuple('Row', attr_names, rename=True)):
         cursor_description = cursor.description
@@ -1032,7 +1032,7 @@ def MutableNamedTupleRow(cursor):
     """
     from recordtype import recordtype
 
-    attr_names = [x[0] for x in cursor._ColBufferList]
+    attr_names = [x[0] for x in cursor.description]
 
     class Row(recordtype('Row', attr_names, rename=True)):
         cursor_description = cursor.description
@@ -2387,11 +2387,11 @@ class Connection:
         self.connected = 1
         
         
-    def cursor(self, row_type_callable=None): 
+    def cursor(self, row_type_callable=None):
         #self.settimeout(self.timeout)
         if not self.connected:
             raise ProgrammingError('HY000','Attempt to use a closed connection.')
-        cur = Cursor(self, row_type_callable=row_type_callable) 
+        cur = Cursor(self, row_type_callable=row_type_callable)
         self._cursors.append(cur)
         return cur
 
