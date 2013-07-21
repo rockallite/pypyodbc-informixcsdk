@@ -10,7 +10,7 @@ except:
 
 setup(
     name='pypyodbc-informixcsdk',
-    version='1.1.5-rkl20130721',
+    version='1.1.5-rkl20130721-2',
     description='A Pure Python ctypes ODBC module (with Informix Client SDK for Mac OS X support)',
     author='Rockallite Wulf',
     author_email='rockallite.wulf@gmail.com',

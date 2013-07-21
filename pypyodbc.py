@@ -26,7 +26,7 @@ pooling = True
 apilevel = '2.0'
 paramstyle = 'qmark'
 threadsafety = 1
-version = '1.1.5-rkl20130721'
+version = '1.1.5-rkl20130721-2'
 lowercase=True
 
 DEBUG = 0
@@ -1065,7 +1065,7 @@ BinaryNull = BinaryNullType()
 # against the changed parameter types
 # 'b' for bool, 'U' for long unicode string, 'u' for short unicode string
 # 'S' for long 8 bit string, 's' for short 8 bit string, 'l' for big integer, 'i' for normal integer
-# 'f' for float, 'D' for Decimal, 't' for datetime.time, 'd' for datetime.datetime, 'dt' for datetime.datetime
+# 'f' for float, 'D' for Decimal, 't' for datetime.time, 'd' for datetime.date, 'dt' for datetime.datetime
 # 'bi' for binary
 def get_type(v):    
 
@@ -1308,7 +1308,7 @@ class Cursor:
                     buf_size = self.connection.type_size_dic[SQL_TYPE_DATE][0]
                     
                     ParameterBuffer = create_buffer(buf_size)
-                    dec_num = self.connection.type_size_dic[SQL_TYPE_DATE][1]
+                    # dec_num = self.connection.type_size_dic[SQL_TYPE_DATE][1]
                     
                 else:
                     # SQL Sever <2008 doesn't have a DATE type.
