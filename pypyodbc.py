@@ -1545,7 +1545,10 @@ class Cursor:
             
 
             if not many_mode:
-                self._NumOfRows()
+                if ret == SQL_NO_DATA:
+                    self.rowcount = 0
+                else:
+                    self._NumOfRows()
                 self._UpdateDesc()
                 #self._BindCols()
             
@@ -1572,7 +1575,10 @@ class Cursor:
             c_query_string = ctypes.c_char_p(query_string)
             ret = ODBC_API.SQLExecDirect(self.stmt_h, c_query_string, len(query_string))
         check_success(self, ret)
-        self._NumOfRows()
+        if ret == SQL_NO_DATA:
+            self.rowcount = 0
+        else:
+            self._NumOfRows()
         self._UpdateDesc()
         #self._BindCols()
         return self
